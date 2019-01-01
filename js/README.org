@@ -1,0 +1,18 @@
+* Practical Common Lisp - Beatifier
+This browser extension adss syntax highlighting and other goodies to the [online
+version](http://www.gigamonkeys.com/book/) of Practical Common Lisp by Peter Seibel.
+
+** Features
+ - syntax highlightinh
+ - table of contents
+ - quick-nav:
+   - `right-arrow-key` - next chapter
+   - `left-arrow-key` - previous chapter
+   - `HOME/POS1` - index page
+
+** TODO
+ - integrate full index into TOC
+
+** Credits
+ - syntax highlighting: [highlight-lisp](https://github.com/orthecreedence/highlight-lisp)
+ - Table of Contents: [Tocbot](https://tscanlin.github.io/tocbot/)
