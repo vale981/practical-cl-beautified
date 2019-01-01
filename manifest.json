@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "Beautify Practical Common Lisp",
+    "version": "1.0",
+
+    "description": "Adds a simple table of contents and syntax highlighting to the web version of Practical Common Lisp by Peter Seibel.",
+
+    "icons": {
+	"48": "icons/border-48.png"
+    },
+
+    "background": {
+	"scripts": [
+	    "./js/background.js"
+	]
+    },
+    
+    "content_scripts": [
+	{
+	    "matches": ["*://*.gigamonkeys.com/book/*.html"],
+	    "js": ["./js/highlight-lisp.js", "./js/tocbot.js","./js/main.js"],
+	    "css": ["./css/highlight-style.css"]
+	}
+    ],
+
+    "permissions": [
+	"*://*.gigamonkeys.com/book/*",
+	"webRequest",
+	"storage"
+    ]
+}
