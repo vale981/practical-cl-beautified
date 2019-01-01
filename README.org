@@ -1,5 +1,5 @@
 * Practical Common Lisp - Beatifier
-This browser extension adss syntax highlighting and other goodies to the [online
+This browser extension adds syntax highlighting and other goodies to the [online
 version](http://www.gigamonkeys.com/book/) of Practical Common Lisp by Peter Seibel.
 
 ** Features
