@@ -49,14 +49,20 @@ function wrapInner(parent, wrapper, attribute, attributevalue) {
       }
 }
 
+function wrapInner(parent, wrapper, className) {
+    if (typeof wrapper === "string")
+        wrapper = document.createElement(wrapper);
 
+    wrapper.classList.add(className);
+    var div = parent.appendChild(wrapper);
 
-// Wrap the insides of the <pre> tags in <code> tags for highlight.js
+    while(parent.firstChild !== wrapper)
+        wrapper.appendChild(parent.firstChild);
+}
+
 function wrapPre() {
     for(let el of document.querySelectorAll('pre')) {
-	let orig = el.innerHTML;
-
-	el.innerHTML = '<code class="lisp">' + orig + "</code>";
+	wrapInner(el, 'code', 'lisp');
     }
 }
 

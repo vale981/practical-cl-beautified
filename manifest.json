@@ -6,7 +6,8 @@
     "description": "Adds a simple table of contents and syntax highlighting to the web version of Practical Common Lisp by Peter Seibel.",
 
     "icons": {
-	"48": "icons/border-48.png"
+	"48": "./icon/icon.svg",
+	"96": "./icon/icon.svg"
     },
 
     "background": {
