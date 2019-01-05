@@ -92,7 +92,7 @@ code.hl-highlighted .list.active {
 	font-size: 14px;
 }
 .toc li a {
-	text-decoration: none;
+    text-decoration: none;
 }
 .toc {
 	overflow-y: auto
@@ -102,7 +102,9 @@ code.hl-highlighted .list.active {
 	position: relative
 }
 .toc>.toc-list li {
-	list-style: none
+    list-style: none;
+    padding-left: 1em;
+    text-indent: -1em;
 }
 .toc-list {
 	margin: 0;
@@ -144,4 +146,12 @@ a.toc-link {
 	.toc {
 		display: none;
 	}
+}
+
+body {
+    counter-reset: chapter;
+}
+h2::before {
+  counter-increment: chapter;                 /* Increment the value of section counter by 1 */
+  content: counters(chapter, '.') ' ';                  /* Display the value of section counter */
 }

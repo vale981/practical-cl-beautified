@@ -37,18 +37,6 @@ function createTOC() {
     });
 }
 
-function wrapInner(parent, wrapper, attribute, attributevalue) {
-    if (typeof wrapper === "string") {
-        wrapper = document.createElement(wrapper);
-    }
-    var div = parent.appendChild(wrapper)
-              .setAttribute(attribute, attributevalue);
-
-    while (parent.firstChild !== wrapper) {
-           wrapper.appendChild(parent.firstChild);
-      }
-}
-
 function wrapInner(parent, wrapper, className) {
     if (typeof wrapper === "string")
         wrapper = document.createElement(wrapper);
@@ -113,14 +101,22 @@ function setUpNav() {
     });
 }
 
-
-loadChapters().then(newChapters => {
-    chapters = newChapters;
-});
+function setUpNumbering() {
+    let chapter = findCurrentChapter();
+    if (chapter >= 0) {
+	document.documentElement.style['counter-reset'] = 'chapter ' + (chapter + 1);
+    }
+};
 
 // Let's apply that stuff.
+loadChapters().then(newChapters => {
+    chapters = newChapters;
+    setUpNumbering();
+});
+
 wrapPre();
 HighlightLisp.highlight_auto();
 HighlightLisp.paren_match();
 createTOC();
 setUpNav();
+
