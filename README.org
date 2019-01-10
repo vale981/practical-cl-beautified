@@ -3,7 +3,7 @@ This browser extension adds syntax highlighting and other goodies to
 the [[http://www.gigamonkeys.com/book/][online version]] of Practical Common Lisp by Peter Seibel.
 
 ** Features
- - syntax highlightinh
+ - syntax highlighting
  - table of contents
  - quick-nav:
    - =right-arrow-key= - next chapter
