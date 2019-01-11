@@ -155,3 +155,9 @@ h2::before {
   counter-increment: chapter;                 /* Increment the value of section counter by 1 */
   content: counters(chapter, '.') ' ';                  /* Display the value of section counter */
 }
+
+.tippy-tooltip.pcl-theme {
+    background: white;
+    color: black;
+    border: solid black;
+}

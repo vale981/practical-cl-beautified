@@ -114,12 +114,13 @@ function collectFootnotes() {
     // collect al footnotes into pairs
     for(let note of document.querySelectorAll('sup')) {
 	let index = parseInt(note.innerText) - 1;
-
+	
 	// JS forces me to do that!
-	if(footMap[index])
-	    footMap[index].push(note);
-	else
-	    footMap[index] = [ note ];
+	if(!footMap[index])
+	    footMap[index] = {};
+
+	footMap[index][note.parentElement.parentElement.classList.contains('notes') ?
+		       'target' : 'origin'] = note; 
     }
 
     return footMap;
@@ -135,17 +136,26 @@ function linkFootnotes() {
 	origin.innerHTML = '';
 	origin.appendChild(link);
     };
+
+    function createPopover(index, origin, target) {
+	let content = target.parentElement.innerHTML;
+	content = content.substring(`<sup>${index+1}</sup>`.length-1);
+	if(target.parentElement.nextSibling.tagName !== 'P')
+	    content += '&hellip;';
+	    
+	tippy(origin, { content, animateFill: false, animation: 'fade', theme: 'pcl'});
+    }
     
     let footMap = collectFootnotes();
 
     for(let index in footMap) {
 	let pair = footMap[index];
-	if(pair && pair.length == 2) {
-	    let first = pair[0];
-	    let second = pair[1];
-
-	    identifyAndLink(index, 1, 2, first, second);
-	    identifyAndLink(index, 2, 1, second, first);
+	if(pair && 'origin' in pair && 'target' in pair) {
+	    let origin = pair.origin;
+	    let target = pair.target;
+	    createPopover(index, origin, target);
+	    identifyAndLink(index, 1, 2, origin, target);
+	    identifyAndLink(index, 2, 1, target, origin);
 	}	    
     }
 }
