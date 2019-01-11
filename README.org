@@ -14,6 +14,7 @@ the [[http://www.gigamonkeys.com/book/][online version]] of Practical Common Lis
 
 ** TODO
  - integrate full index into TOC
+ - expand highlighting to all sites -> detect lisp in pre/code
 
 ** Credits
  - syntax highlighting: [[https://github.com/orthecreedence/highlight-lisp][highlight-lisp]]
