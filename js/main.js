@@ -132,15 +132,15 @@ function linkFootnotes() {
 	let link = document.createElement('a');
 	target.id = `foot${index}${targetid}`;
 	link.href = '#' + target.id;
-	link.innerText = ++index;
+	link.innerText = (index + 1);
 	origin.innerHTML = '';
 	origin.appendChild(link);
     };
 
     function createPopover(index, origin, target) {
 	let content = target.parentElement.innerHTML;
-	content = content.substring(`<sup>${index+1}</sup>`.length-1);
-	if(target.parentElement.nextSibling.tagName !== 'P')
+	content = content.substring(`<sup>${index+1}</sup>`.length);
+	if(target.parentElement && target.parentElement.nextSibling && target.parentElement.nextSibling.tagName !== 'P')
 	    content += '&hellip;';
 	    
 	tippy(origin, { content, animateFill: false, animation: 'fade', theme: 'pcl'});
@@ -149,6 +149,7 @@ function linkFootnotes() {
     let footMap = collectFootnotes();
 
     for(let index in footMap) {
+	index = parseInt(index); // I love you JavaScript :/
 	let pair = footMap[index];
 	if(pair && 'origin' in pair && 'target' in pair) {
 	    let origin = pair.origin;
@@ -166,11 +167,11 @@ loadChapters().then(newChapters => {
     setUpNumbering();
 });
 
+linkFootnotes();
 wrapPre();
 HighlightLisp.highlight_auto();
 HighlightLisp.paren_match();
 createTOC();
 setUpNav();
-linkFootnotes();
 
 
