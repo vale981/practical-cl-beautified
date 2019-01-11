@@ -1,4 +1,4 @@
-# -*- mode: gitignore; -*-
+ # -*- mode: gitignore; -*-
 *~
 \#*\#
 /.emacs.desktop
@@ -48,3 +48,5 @@ flycheck_*.el
 /network-security.data
 
 .ignored
+
+web-ext-artifacts
