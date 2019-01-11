@@ -166,11 +166,11 @@ loadChapters().then(newChapters => {
     setUpNumbering();
 });
 
-linkFootnotes();
 wrapPre();
 HighlightLisp.highlight_auto();
 HighlightLisp.paren_match();
 createTOC();
 setUpNav();
+linkFootnotes();
 
 
