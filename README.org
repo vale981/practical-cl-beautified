@@ -11,6 +11,7 @@ the [[http://www.gigamonkeys.com/book/][online version]] of Practical Common Lis
    - =right-arrow-key= - next chapter
    - =left-arrow-key= - previous chapter
    - =HOME/POS1= - index page
+ - linked footnotes
 
 ** TODO
  - integrate full index into TOC
