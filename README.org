@@ -8,9 +8,9 @@ the [[http://www.gigamonkeys.com/book/][online version]] of Practical Common Lis
  - syntax highlighting
  - table of contents
  - quick-nav:
-   - =right-arrow-key= - next chapter
-   - =left-arrow-key= - previous chapter
-   - =HOME/POS1= - index page
+   - =n= - next chapter
+   - =p= - previous chapter
+   - =h= - index page
  - footnote popvers
 
 ** TODO
@@ -20,3 +20,4 @@ the [[http://www.gigamonkeys.com/book/][online version]] of Practical Common Lis
 ** Credits
  - syntax highlighting: [[https://github.com/orthecreedence/highlight-lisp][highlight-lisp]]
  - Table of Contents: [[https://tscanlin.github.io/tocbot/][Tocbot]]
+ - Tooltips: [[https://github.com/atomiks/tippyjs][Tippy]]

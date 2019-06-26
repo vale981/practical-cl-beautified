@@ -87,14 +87,14 @@ function gotoNext() {
 // set up the navigation shortcuts
 function setUpNav() {
     document.addEventListener('keypress', (event) => {
-        switch(event.keyCode) {
-        case 37:
+        switch(event.key) {
+        case 'p':
             goToPrevious();
             break;
-        case 39:
+        case 'n':
             gotoNext();
             break;
-        case 36:
+        case 'h':
             document.location.href = 'index.html';
             break;
         }
@@ -163,7 +163,6 @@ function linkFootnotes() {
 
 // Let's apply that stuff.
 loadChapters().then(newChapters => {
-    console.log(newChapters);
     chapters = newChapters;
     setUpNumbering();
 });
