@@ -163,6 +163,7 @@ function linkFootnotes() {
 
 // Let's apply that stuff.
 loadChapters().then(newChapters => {
+    console.log(newChapters);
     chapters = newChapters;
     setUpNumbering();
 });

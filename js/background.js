@@ -24,13 +24,12 @@ function fetchChapters() {
     });});
 }
 
-function handleMessage(message, sender, respond) {
+function handleMessage(message, sender) {
     if (message.msg == "getChapters") {
-	fetchChapters().then(chapters => respond(chapters)).catch(() => {
-	    respond();
-	});
-	return true;
+	return fetchChapters();
     }
+
+    return true;
 }
 
 browser.runtime.onMessage.addListener(handleMessage);
