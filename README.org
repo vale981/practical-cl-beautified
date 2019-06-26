@@ -2,7 +2,8 @@
 This browser extension adds syntax highlighting and other goodies to
 the [[http://www.gigamonkeys.com/book/][online version]] of Practical Common Lisp by Peter Seibel.
 
-[[https://addons.mozilla.org/de/firefox/addon/beautify-practical-common-lisp/?src=search][Firefox Addon]]
+For now see: https://github.com/vale981/practical-cl-beautified/releases/latest
+([[https://addons.mozilla.org/de/firefox/addon/beautify-practical-common-lisp/?src=search][Firefox Addon]], currently unlisted)
 
 ** Features
  - syntax highlighting
