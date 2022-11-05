@@ -20,6 +20,7 @@
     "content_scripts": [
 	{
 	    "matches": ["*://*.gigamonkeys.com/book/*.html"],
+            "exclude_matches": ["*://*.gigamonkeys.com/book/index.html"],
 	    "js": ["./js/webpoly.js", "./js/highlight-lisp.js", "./js/tocbot.js","./js/tippy.js","./js/main.js"],
 	    "css": ["./css/highlight-style.css"]
 	}
