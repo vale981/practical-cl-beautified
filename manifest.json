@@ -6,29 +6,29 @@
     "description": "Adds a simple table of contents and syntax highlighting to the web version of Practical Common Lisp by Peter Seibel.",
 
     "icons": {
-	"48": "./icon/icon.svg",
-	"96": "./icon/icon.svg"
+        "48": "./icon/icon.svg",
+        "96": "./icon/icon.svg"
     },
 
     "background": {
-	"scripts": [
-	    "./js/webpoly.js",
-	    "./js/background.js"
-	]
+        "scripts": [
+            "./js/webpoly.js",
+            "./js/background.js"
+        ]
     },
-    
+
     "content_scripts": [
-	{
-	    "matches": ["*://*.gigamonkeys.com/book/*.html"],
-            "exclude_matches": ["*://*.gigamonkeys.com/book/index.html"],
-	    "js": ["./js/webpoly.js", "./js/highlight-lisp.js", "./js/tocbot.js","./js/tippy.js","./js/main.js"],
-	    "css": ["./css/highlight-style.css"]
-	}
+        {
+            "matches": ["*://*.gigamonkeys.com/book/*.html", "*://*.gigamonkeys.com/book/*"],
+            "exclude_matches": ["*://*.gigamonkeys.com/book/index.html", "*://*.gigamonkeys.com/book/index"],
+            "js": ["./js/webpoly.js", "./js/highlight-lisp.js", "./js/tocbot.js","./js/tippy.js","./js/main.js"],
+            "css": ["./css/highlight-style.css"]
+        }
     ],
 
     "permissions": [
-	"*://*.gigamonkeys.com/book/*",
-	"webRequest",
-	"storage"
+        "*://*.gigamonkeys.com/book/*",
+        "webRequest",
+        "storage"
     ]
 }
